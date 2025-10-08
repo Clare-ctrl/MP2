@@ -1,0 +1,122 @@
+/* forms */
+form {
+  width: 100%;
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.control,
+fieldset {
+  margin-bottom: 1rem;
+}
+
+.control label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: var(--light-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.control input {
+  display: block;
+  width: 20rem;
+  padding:0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  color: #142020;
+}
+
+.control select {
+  display: block;
+  width: 20rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: var(--light-color);
+  color: #142020;
+}
+
+.control:has(input[type='radio']) {
+  display: flex;
+  align-items: center;
+}
+
+.control:has(input[type='radio']) label {
+  margin: 0;
+}
+
+.control input[type='radio'] {
+  display: inline-block;
+  width: auto;
+  max-width: none;
+  margin-right: 0.5rem;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--light-color);
+}
+
+.control-row {
+  display: inline-block;
+
+}
+
+.control-error {
+  color: #ffca99;
+  font-size: 0.8rem;
+  height: 2rem;
+  padding: 0.5rem 0;
+}
+
+.control-error p {
+  margin: 0;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.result-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  
+}
+.result-card {
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--light-color);
+  border-radius: 8px;
+  color:var(--light-color);
+  text-decoration: none;
+}
+.result-card img.poke-img {
+  width: 100px;
+  height: auto;
+}
+
+.result-card:hover {
+  width: 25rem;
+  height: auto;
+  transition: 0.5s;
+}

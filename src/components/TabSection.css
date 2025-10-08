@@ -1,0 +1,30 @@
+#selection menu {
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+#selection menu button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #a18aba;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#selection menu button:hover {
+  background-color: #1b082f;
+  color: var(--light-color);
+}
+
+#tab-content {
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #2f1d43;
+  box-shadow: 0 2px 8px var(--border-color);
+}

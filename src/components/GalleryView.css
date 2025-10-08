@@ -1,0 +1,45 @@
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+}
+.gallery-grid .card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+.card :hover {
+  width: 100px;
+  height: auto;
+  transition: 0.2s;
+  border: 1px solid rgb(214, 131, 232);
+}
+.card img {
+  width: 80px;
+  height: 80px;
+}
+.filter .filter-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  gap: 70px;
+}
+
+.filter button {
+  padding: 0.5rem 1rem;
+  border: 4px var(--border-color);
+  border-radius: 6px;
+  background-color: var(--dark-purple);
+  color: #a18aba;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 6rem;
+  
+}
