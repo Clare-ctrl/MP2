@@ -24,7 +24,7 @@ export default function GalleryView() {
   if (!isCarouselActive) {
     setFilterText("all"); // reset whenever gallery is active
   }
-  }, []);
+  }, [isCarouselActive]);
 
   const filteredData = useMemo(() => {
     if (!filterText || filterText === "all") return pokemonData;

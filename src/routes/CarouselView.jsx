@@ -1,9 +1,5 @@
-import { Link } from "react-router-dom";
-//import { Outlet } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import useFetchData from "../components/FatchData";
-import TabSection from "../components/TabSection";
-import Header from "../components/Header";
 import './Carousel.css';
 
 export default function CarouselView() {

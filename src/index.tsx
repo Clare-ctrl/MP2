@@ -1,10 +1,9 @@
-import React, { Children } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 import CarouselView from './routes/CarouselView';
-import TabSection from './components/TabSection';
 
 
 const root = ReactDOM.createRoot(
