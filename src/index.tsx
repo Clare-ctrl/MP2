@@ -27,7 +27,8 @@ const router = createBrowserRouter([
       { path: 'carousel/:id', element: <CarouselView /> }
     ]
   }
-]);
+], {basename: "/MP2"}
+);
 
 
 root.render(
