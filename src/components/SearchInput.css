@@ -69,22 +69,6 @@ fieldset {
 }
 
 .control-row {
-  display: inline-block;
-
-}
-
-.control-error {
-  color: #ffca99;
-  font-size: 0.8rem;
-  height: 2rem;
-  padding: 0.5rem 0;
-}
-
-.control-error p {
-  margin: 0;
-}
-
-.control-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;

@@ -5,21 +5,29 @@
   gap: 40px;
   justify-content: center;
   align-items: center;
-}
 
-#selection menu button {
+}
+#selection button {
   padding: 0.5rem 1rem;
-  border: none;
   border-radius: 6px;
   background-color: transparent;
-  color: #a18aba;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
 }
 
-#selection menu button:hover {
-  background-color: #1b082f;
-  color: var(--light-color);
+#selection button a {
+  color: var(--light-purple);
+  text-decoration: none;
+}
+
+#selection button:hover {
+  background-color: var(--light-purple);
+}
+
+#selection button:hover a {
+  color: var(--dark-purple);
 }
 
 #tab-content {

@@ -1,28 +1,22 @@
-import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import TabButton from '../components/TabButton';
+import { useState} from 'react';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import SearchInput from '../components/SearchInput';
 import GalleryView from '../components/GalleryView';
 import "./TabSection.css";
 
 export default function TabSection() {
   type Topic = "search" | "gallery" | null;
-  const [selectedTopic, setSelectedTopic] = useState<Topic>(null);
-  const [galleryKey, setGalleryKey] = useState(0);
+  const [selectedTopic] = useState<Topic>(null);
+  const [galleryKey] = useState(0);
   const location = useLocation();
-  const navigate = useNavigate();
+ // const navigate = useNavigate();
 
   const isCarousel = location.pathname.startsWith('/carousel/');
-  function handleSelect(selectedButton: Topic) {
-    setSelectedTopic(selectedButton);
-    // Navigate back to root if on carousel route
-    if (isCarousel) {
-      navigate('/');
-    }
-    if (selectedTopic === 'gallery') {
-      setGalleryKey(k => k+1);
-    }
-  }
+  // Navigate back to root if on carousel route
+   //  if (isCarousel) {
+   //   navigate('/');
+   // }
 
   let tabContent = null;
   if (selectedTopic === 'search') {
@@ -38,18 +32,18 @@ export default function TabSection() {
   return (
     <section id="selection">
       <menu>
-        <TabButton
-          isSelected={selectedTopic === "search"}
-          onSelect={() => handleSelect("search")}
+        <button
+          //isSelected={selectedTopic === "search"}
+          //onSelect={() => handleSelect("search")}
         >
-          Search
-        </TabButton>
-        <TabButton
-          isSelected={selectedTopic === "gallery"}
-          onSelect={() => handleSelect("gallery")}
+          <Link to={'/'}>Search</Link>
+        </button>
+        <button
+          //isSelected={selectedTopic === "gallery"}
+          //onSelect={() => handleSelect("gallery")}
         >
-          Gallery
-        </TabButton>
+          <Link to={'/gallery'}>Gallery</Link>
+        </button>
       </menu>
       <main>{!isCarousel && tabContent}</main>
     </section>

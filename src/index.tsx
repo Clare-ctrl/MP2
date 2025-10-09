@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 import CarouselView from './routes/CarouselView';
+import GalleryView from './components/GalleryView';
+import SearchInput from './components/SearchInput';
 
 
 const root = ReactDOM.createRoot(
@@ -20,7 +22,8 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
-      { path: '/', element: null }, // no default component, handled in App via TabSection
+      { path: '/', element: <SearchInput /> }, // no default component, handled in App via TabSection
+      { path: 'gallery', element: <GalleryView/> }, 
       { path: 'carousel/:id', element: <CarouselView /> }
     ]
   }

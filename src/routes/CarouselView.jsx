@@ -4,7 +4,7 @@ import './Carousel.css';
 
 export default function CarouselView() {
 
-    const { data, loading } = useFetchData("gallery");
+    const { data, _ } = useFetchData("gallery");
     const { id } = useParams();
     const navigate = useNavigate();
 

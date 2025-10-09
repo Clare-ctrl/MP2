@@ -9,7 +9,7 @@ interface Pokemon {
   id: number;
   name: string;
   image: string;
-  types: string[];
+  types?: string[];
 }
 
 export default function GalleryView() {
@@ -17,27 +17,32 @@ export default function GalleryView() {
   const isCarouselActive = location.pathname.startsWith("/carousel/");
 
   const { data, loading } = useFetchData("gallery");
-  const pokemonData = (data ?? []) as Pokemon[];
+  
   const [filterText, setFilterText] = useState('');
 
+
+  const pokemonData: Pokemon[] = useMemo(() => { return data ?? [] } , [data]);
+  console.log(pokemonData);
   useEffect(() => {
-  if (!isCarouselActive) {
+  
     setFilterText("all"); // reset whenever gallery is active
-  }
-  }, [isCarouselActive]);
+  }, [location.key]);
 
   const filteredData = useMemo(() => {
-    if (!filterText || filterText === "all") return pokemonData;
+    if (!filterText || filterText === "all") { return pokemonData;}
+    console.log(filterText);
     const needle = filterText.toLowerCase();
     return pokemonData.filter((item) =>
+      
       item.types?.some((t: string) => t.toLowerCase().includes(needle))
     );
   }, [pokemonData, filterText]);
 
+
   const handleFilterChange = (text: string) => setFilterText(text);
   
   if (loading) return <p>Loading...</p>;
-
+  console.log(filteredData);
   return (
     <div>
         <div className="filter">
@@ -46,6 +51,9 @@ export default function GalleryView() {
           <button onClick={() => handleFilterChange("fire")}>Fire</button>
           <button onClick={() => handleFilterChange("water")}>Water</button>
           <button onClick={() => handleFilterChange("grass")}>Grass</button>
+          <button onClick={() => handleFilterChange("electric")}>Electric</button>
+          <button onClick={() => handleFilterChange("poison")}>Poison</button>
+          <button onClick={() => handleFilterChange("bug")}>Bug</button>
           <button onClick={() => handleFilterChange("all")}>All</button>
         </div>
       )}
